@@ -1,2 +1,3 @@
-g++ test_$1.cpp
+g++ $1.cpp
+echo "compiled!"
 ./a.out

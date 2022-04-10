@@ -15,7 +15,7 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-  std::vector<int> array = {3, 2, 5, 7, 1};
+    std::vector<int> array = {3, 2, 5, 7, 1};
 
     // 配列のインデックス indiecs = {0, 1, 2, 3, 4} を作成する。
     std::vector<size_t> indices(array.size());
