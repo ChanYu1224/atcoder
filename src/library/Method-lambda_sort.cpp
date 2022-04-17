@@ -18,18 +18,19 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-	int x[3], y[3];
-	rep(i,3) cin >> x[i] >> y[i];
+    std::vector<int> array = {3, 2, 5, 7, 1};
 
-	int ans_x, ans_y;
+    // 配列のインデックス indiecs = {0, 1, 2, 3, 4} を作成する。
+    std::vector<size_t> indices(array.size());
+    std::iota(indices.begin(), indices.end(), 0);
 
-	if(x[0] == x[1]) ans_x = x[2];
-	if(x[1] == x[2]) ans_x = x[0];
-	if(x[0] == x[2]) ans_x = x[1];
+    // ソートする。
+    std::sort(indices.begin(), indices.end(), [&array](size_t i1, size_t i2) {
+        return array[i1] < array[i2];
+    });
 
-	if(y[0] == y[1]) ans_y = y[2];
-	if(y[1] == y[2]) ans_y = y[0];
-	if(y[0] == y[2]) ans_y = y[1];
-
-	cout << ans_x << " " << ans_y << endl;
+    for (auto v : indices)
+        std::cout << v << " ";
+        
+    std::cout << std::endl;
 }

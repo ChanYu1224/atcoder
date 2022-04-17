@@ -11,25 +11,28 @@ using namespace std;
 #define YesNo(a) (a)?cout<<"Yes"<<endl:cout<<"No"<<endl
 #define YESNO(a) (a)?cout<<"YES"<<endl:cout<<"NO"<<endl
 #define INF (2e9)
+#define longINF (2e18)
 #define PI (acos(-1))
 #define all(x) (x).begin(),(x).end()
 #define MOD 1000000007
 
 typedef long long ll;
 
+ll f(ll a, ll b){
+    return a*a*a + a*a*b + a*b*b + b*b*b;
+}
+
 int main(){
-	int x[3], y[3];
-	rep(i,3) cin >> x[i] >> y[i];
+	ll n; cin >> n;
 
-	int ans_x, ans_y;
+    ll x = 2e18;
+    ll j = 1000000;
+    rep(i,1000000){
+        while(f(i,j) >= n && j >= 0){
+            x = min(x,f(i,j));
+            j--;
+        }
+    }
 
-	if(x[0] == x[1]) ans_x = x[2];
-	if(x[1] == x[2]) ans_x = x[0];
-	if(x[0] == x[2]) ans_x = x[1];
-
-	if(y[0] == y[1]) ans_y = y[2];
-	if(y[1] == y[2]) ans_y = y[0];
-	if(y[0] == y[2]) ans_y = y[1];
-
-	cout << ans_x << " " << ans_y << endl;
+    cout << x << endl;
 }
