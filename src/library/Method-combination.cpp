@@ -16,7 +16,7 @@ typedef long long ll;
 
 const int MAX = 510000;
 ll fac[MAX], finv[MAX], inv[MAX];
- 
+
 // テーブルを作る前処理
 void COMinit() {
     fac[0] = fac[1] = 1;
@@ -28,11 +28,10 @@ void COMinit() {
         finv[i] = finv[i - 1] * inv[i] % MOD;
     }
 }
- 
+
 // 二項係数計算
 ll COM(int n, int k){
     if (n < k) return 0;
     if (n < 0 || k < 0) return 0;
     return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
 }
- 
