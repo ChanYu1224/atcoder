@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+#include <atcoder/all>
 using namespace std;
+using namespace atcoder;
 
 #define _overload3(_1,_2,_3,name,...) name
 #define _rep(i,n) repi(i,0,n)
@@ -19,10 +21,5 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-    ll n,k; cin >> n >> k;
-
-    ll ans = n%k;
-    ans = min(ans, abs(ans-k));
-
-    cout << ans << endl;
+    
 }
