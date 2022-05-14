@@ -50,7 +50,7 @@ int main(){
     int ans = 0;
     for(int i = k-1; i >= 0; --i){
         if(scc[i].size()==1){
-            for(auto v : graph_list[scc[i][0]]){
+            for(auto v : graph_list[scc[i][0]]){ //scc[i][0]はi番目の集合の1つめ
                 if(dp[index[v]]) dp[i] = 1;
             }
         }else{
