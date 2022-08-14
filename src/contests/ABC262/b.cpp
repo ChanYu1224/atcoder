@@ -18,6 +18,27 @@ using namespace std;
 
 typedef long long ll;
 
+bool graph[101][101];
+
 int main(){
-    
+    int n,m; cin >> n >> m;
+    rep(i,m){
+        int u, v; cin >> u >> v;
+        u--;
+        v--;
+        graph[u][v] = true;
+        graph[v][u] = true;
+    }
+
+    int ans = 0;
+
+    rep(i,100){
+        rep(j,i+1,100){
+            rep(k,j+1,100){
+                if(graph[i][j] && graph[j][k] && graph[k][i]) ans++;
+            }
+        }
+    }
+
+    cout << ans << endl;
 }

@@ -19,5 +19,22 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-    
+    int n; cin >> n;
+    vector<ll> a(n); rep(i,n) cin >> a[i];
+
+    rep(i,n){
+        a[i]--;
+    }
+
+    ll cnt = 0;
+    ll ans = 0;
+    rep(i,n){
+        if(a[i] == i) cnt++;
+        if(a[a[i]] == i && i < a[i]) ans++;
+    }
+
+    cnt = max(0,cnt-1);
+    ans += (cnt+1)*cnt / 2;
+
+    cout << ans << endl;
 }

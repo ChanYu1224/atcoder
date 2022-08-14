@@ -19,5 +19,18 @@ using namespace std;
 typedef long long ll;
 
 int main(){
+    int l1, r1, l2, r2; cin >> l1 >> r1 >> l2 >> r2;
     
+    vector<bool> is_red(101, false), is_blue(101, false);
+
+    rep(i,l1,r1) is_red[i] = true;
+    rep(i,l2,r2) is_blue[i] = true;
+
+    int ans = 0;
+
+    rep(i,101){
+        if(is_red[i] && is_blue[i]) ans++;
+    }
+
+    cout << ans << endl;
 }

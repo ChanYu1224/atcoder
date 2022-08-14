@@ -19,5 +19,14 @@ using namespace std;
 typedef long long ll;
 
 int main(){
-    
+    int y; cin >> y;
+
+    rep(i,2000,3010){
+        if(i%4 == 2){
+            if(y <= i){
+                cout << i << endl;
+                break;
+            }
+        }
+    }
 }
