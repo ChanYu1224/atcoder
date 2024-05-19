@@ -17,6 +17,20 @@ using namespace std;
 
 typedef long long ll;
 
+void sort2vectors(vector<int> &av, vector<int> &bv)
+{
+        int n = av.size();
+        vector<int> p(n), av2(n), bv2(n);
+        iota(p.begin(), p.end(), 0);
+        sort(p.begin(), p.end(), [&](int a, int b) { return av[a] < av[b]; });
+        for (int i = 0; i < n; i++) {
+                av2[i] = av[p[i]];
+                bv2[i] = bv[p[i]];
+        }
+        av = av2;
+        bv = bv2;
+}
+
 int main(){
     std::vector<int> array = {3, 2, 5, 7, 1};
 

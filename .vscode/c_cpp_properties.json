@@ -1,21 +1,21 @@
 {
-    "version": 4,
     "configurations": [
         {
-            "name": "WSL",
+            "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/include/**"
+                "/opt/homebrew/Cellar/gcc/14.1.0/include"
             ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
+            "defines": [],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
             ],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/opt/homebrew/bin/g++-14",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-x64"
+            "intelliSenseMode": "clang-x64"
         }
-    ]
+    ],
+    "version": 4
 }
